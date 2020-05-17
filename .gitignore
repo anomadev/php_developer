@@ -1,1 +1,23 @@
 env_php/
+
+# Directorios y archivos a omitir del curso del Desarrollo de un Ecommerce con Laravel y Vue
+ecommerce/laradock
+ecommerce/node_modules
+ecommerce/public/hot
+ecommerce/public/storage
+ecommerce/storage/*.key
+ecommerce/vendor
+ecommerce/.idea
+ecommerce/.vscode
+ecommerce/.vagrant
+ecommerce/Homestead.json
+ecommerce/Homestead.yaml
+ecommerce/npm-debug.log
+ecommerce/yarn-error.log
+ecommerce/.env
+ecommerce/.phpunit.result.cache
+
+# Directorios y archivos a omitir del curso de pruebas unitarias
+testing/laradock
+testing/vendor
+testing/.idea

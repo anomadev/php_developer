@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+  <test className="Test\Unit\CartTest" methodName="testItCreatesACart" prettifiedClassName="Cart (Test\Unit\Cart)" prettifiedMethodName="It creates a cart" status="0" time="0.043026470999393" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="Test\Unit\CartTest" methodName="testItAddsMultiplesItems" prettifiedClassName="Cart (Test\Unit\Cart)" prettifiedMethodName="It adds multiples items" status="0" time="0.028269931999603" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="Test\Unit\CartTest" methodName="testIsEmpty" prettifiedClassName="Cart (Test\Unit\Cart)" prettifiedMethodName="Is empty" status="0" time="0.023436801999196" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="Test\Unit\CartTest" methodName="testItRemoveAnItem" prettifiedClassName="Cart (Test\Unit\Cart)" prettifiedMethodName="It remove an item" status="0" time="0.025786287998926" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="Test\Unit\CartTest" methodName="testItStoreAnCart" prettifiedClassName="Cart (Test\Unit\Cart)" prettifiedMethodName="It store an cart" status="0" time="0.033001108000462" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="Test\Unit\CartTest" methodName="testItThrowsAnEmptyException" prettifiedClassName="Cart (Test\Unit\Cart)" prettifiedMethodName="It throws an empty exception" status="0" time="0.027770931001214" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="Test\Unit\FirstTest" methodName="Sum" prettifiedClassName="First (Test\Unit\First)" prettifiedMethodName="Sum" status="0" time="0.00032422900039819" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="Test\Unit\FirstTest" methodName="testToComplete" prettifiedClassName="First (Test\Unit\First)" prettifiedMethodName="To complete" status="2" time="0.00027931599834119" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="Test\Unit\FirstTest" methodName="testSkipped" prettifiedClassName="First (Test\Unit\First)" prettifiedMethodName="Skipped" status="1" time="0.00022872400040796" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+</tests>

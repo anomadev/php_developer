@@ -1,0 +1,40 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.app-form > div {
+    margin-top: 1em;
+}
+
+.card.padding {
+    padding: 1em;
+}
+
+.mg-top {
+    margin-top: 1em;
+}
+
+.card-product {
+    margin: 1em 0;
+
+    strong {
+        text-transform: uppercase;
+    }
+
+    &.total {
+        margin-top: 2em;
+        padding-top: 2em;
+        border-top: solid 1px #eee;
+    }
+}

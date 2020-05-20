@@ -6,6 +6,8 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
+use App\Http\Resources\PostResource;
+use App\Http\Resources\PostCollection;
 
 class PostController extends Controller
 {
@@ -16,7 +18,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return new PostCollection(Post::with(['author', 'comments'])->paginate(1));
     }
 
     /**
@@ -27,6 +29,7 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
+        PostResource::withoutWrapping();
         $post = Post::create($request->all());
         return response()->json(['data' => $post], 201);
     }
@@ -39,7 +42,8 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return response()->json(['data' => $post], 200);
+        PostResource::withoutWrapping();
+        return new PostResource($post);
     }
 
     /**

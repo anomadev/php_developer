@@ -82,6 +82,12 @@ class ArticleController extends Controller
         return response([], Response::HTTP_NO_CONTENT);
     }
 
+    public function myArticles()
+    {
+        $user = Auth::user();
+        return ArticleResource::collection($user->articles()->paginate(3));
+    }
+
     public function validateData()
     {
         return request()->validate([

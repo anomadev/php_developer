@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('testroot')
         ]);
 
+        factory(User::class)->create();
+
         factory(Article::class)->times(20)->create();
         factory(Comment::class)->times(10)->create();
         // $this->call(UsersTableSeeder::class);

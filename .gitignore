@@ -20,3 +20,9 @@ e-commerce/.phpunit.result.cache
 # Directorios y archivos a omitir del curso de pruebas unitarias
 testing/vendor
 testing/.idea
+
+# Directorios y archivos a omitir del curso de SPA con Inertia
+inertiaspa/.idea
+inertiaspa/node_modules
+inertiaspa/vendor
+inertiaspa/.env

@@ -26,3 +26,9 @@ inertiaspa/.idea
 inertiaspa/node_modules
 inertiaspa/vendor
 inertiaspa/.env
+
+# Directorios y archivos a omitir del curso Testing con PHP y Laravel
+l8unit/.idea
+l8unit/node_modules
+l8unit/vendor
+l8unit/.env

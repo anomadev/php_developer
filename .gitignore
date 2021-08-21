@@ -32,3 +32,9 @@ l8unit/.idea
 l8unit/node_modules
 l8unit/vendor
 l8unit/.env
+
+# Directorios y archivos a omitir del curso API REST con Laravel
+l8api/.idea
+l8api/node_modules
+l8api/vendor
+l8api/.env

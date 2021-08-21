@@ -38,3 +38,9 @@ l8api/.idea
 l8api/node_modules
 l8api/vendor
 l8api/.env
+
+# Directorios y archivos a omitir del curso Laravel Avanzado
+ladvanced/.idea
+ladvanced/node_modules
+ladvanced/vendor
+ladvanced/.env

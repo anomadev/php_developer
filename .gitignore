@@ -44,3 +44,9 @@ ladvanced/.idea
 ladvanced/node_modules
 ladvanced/vendor
 ladvanced/.env
+
+# Directorios y archivos a omitir del curso Laravel TDD
+l8tdd/.idea
+l8tdd/node_modules
+l8tdd/vendor
+l8tdd/.env

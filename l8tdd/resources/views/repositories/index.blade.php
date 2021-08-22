@@ -6,13 +6,14 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 md:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
                 <table>
                     <thead>
                     <tr>
                         <td>ID</td>
                         <td>Enlace</td>
+                        <td>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>
                     </thead>
@@ -22,10 +23,11 @@
                             <td class="border px-4 py-2">{{ $repository->id }}</td>
                             <td class="border px-4 py-2">{{ $repository->url }}</td>
                             <td class="px-4 py-2"><a href="{{ route('repositories.show', $repository) }}">Ver</a></td>
+                            <td class="px-4 py-2"><a href="{{ route('repositories.edit', $repository) }}">Editar</a></td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="3">No hay repositorios creados</td>
+                            <td colspan="4">No hay repositorios creados</td>
                         </tr>
                     @endforelse
                     </tbody>

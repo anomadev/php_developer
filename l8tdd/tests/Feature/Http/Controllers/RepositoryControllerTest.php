@@ -24,6 +24,27 @@ class RepositoryControllerTest extends TestCase
         $this->post('repositories', [])->assertRedirect('login');       // store
     }
 
+    public function test_index_empty()
+    {
+        Repository::factory()->create();
+        $user = User::factory()->create();
+
+        $this->actingAs($user)->get('repositories')
+            ->assertStatus(200)
+            ->assertSee('No hay repositorios creados');
+    }
+
+    public function test_index_with_data()
+    {
+        $user = User::factory()->create();
+        $repository = Repository::factory()->create(['user_id' => $user->id]);
+
+        $this->actingAs($user)->get('repositories')
+            ->assertStatus(200)
+            ->assertSee($repository->id)
+            ->assertSee($repository->url);
+    }
+
     public function test_store()
     {
         $data = [
@@ -39,17 +60,29 @@ class RepositoryControllerTest extends TestCase
 
     public function test_update()
     {
+        $user = User::factory()->create();
+        $repository = Repository::factory()->create(['user_id' => $user->id]);
+        $data = [
+            'url' => $this->faker->url,
+            'description' => $this->faker->text
+        ];
+
+        $this->actingAs($user)->put("repositories/{$repository->id}", $data)
+            ->assertRedirect("repositories/$repository->id/edit");
+        $this->assertDatabaseHas('repositories', $data);
+    }
+
+    public function test_update_policy()
+    {
+        $user = User::factory()->create();
         $repository = Repository::factory()->create();
         $data = [
             'url' => $this->faker->url,
             'description' => $this->faker->text
         ];
-        $user = User::factory()->create();
 
-        $this->withoutExceptionHandling();
         $this->actingAs($user)->put("repositories/{$repository->id}", $data)
-            ->assertRedirect("repositories/$repository->id/edit");
-        $this->assertDatabaseHas('repositories', $data);
+            ->assertStatus(403);
     }
 
     public function test_validate_store()
@@ -73,8 +106,8 @@ class RepositoryControllerTest extends TestCase
 
     public function test_destroy()
     {
-        $repository = Repository::factory()->create();
         $user = User::factory()->create();
+        $repository = Repository::factory()->create(['user_id' => $user->id]);
 
         $this->actingAs($user)->delete("repositories/$repository->id")
             ->assertRedirect('repositories');
@@ -83,5 +116,32 @@ class RepositoryControllerTest extends TestCase
             'url' => $repository->url,
             'description' => $repository->description
         ]);
+    }
+
+    public function test_destroy_policy()
+    {
+        $user = User::factory()->create();
+        $repository = Repository::factory()->create();
+
+        $this->actingAs($user)->delete("repositories/$repository->id")
+            ->assertStatus(403);
+    }
+
+    public function test_show()
+    {
+        $user = User::factory()->create();
+        $repository = Repository::factory()->create(['user_id' => $user->id]);
+
+        $this->actingAs($user)->get("repositories/$repository->id")
+            ->assertStatus(200);
+    }
+
+    public function test_show_policy()
+    {
+        $user = User::factory()->create();
+        $repository = Repository::factory()->create();
+
+        $this->actingAs($user)->get("repositories/$repository->id")
+            ->assertStatus(403);
     }
 }

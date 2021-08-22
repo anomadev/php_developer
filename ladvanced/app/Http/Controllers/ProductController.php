@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductResource;
+use App\Http\Resources\ProductCollection;
+use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -9,10 +13,10 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return Product::all();
+        return new ProductCollection(Product::all());
     }
 
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
         $product = Product::create($request->all());
 
@@ -21,10 +25,11 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
+        $product = new ProductResource($product);
         return $product;
     }
 
-    public function update(Request $request, Product $product)
+    public function update(UpdateProductRequest $request, Product $product)
     {
         $product->update($request->all());
     }

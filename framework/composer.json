@@ -1,0 +1,19 @@
+{
+    "name": "anomadev/framework",
+    "description": "Project Framework Basic",
+    "authors": [
+        {
+            "name": "anomadev",
+            "email": "cristhofer.dev@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
+    }
+}

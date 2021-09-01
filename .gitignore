@@ -50,3 +50,7 @@ l8tdd/.idea
 l8tdd/node_modules
 l8tdd/vendor
 l8tdd/.env
+
+# Directorio y archivos a omitir del curso Frameworks de PHP
+framework/.idea
+framework/vendor

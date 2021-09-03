@@ -54,3 +54,6 @@ l8tdd/.env
 # Directorio y archivos a omitir del curso Frameworks de PHP
 framework/.idea
 framework/vendor
+
+# Directorio y archivos a omitir del curso API REST
+phprest/.idea
